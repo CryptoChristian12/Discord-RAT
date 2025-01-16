@@ -1179,9 +1179,6 @@ async def on_message(message):
             else:
                 await message.channel.send("[*] This command requires admin privileges")
 
-        if message.content == "!help":
-            async def send(ctx):
-    await ctx.send("Here's the helpmenu"+{helpmenu})
         if message.content == "!getdiscordtokens":
             from asyncio.proactor_events import _ProactorSocketTransport
             import os
